@@ -1,0 +1,22 @@
+{
+  "name": "rest-api",
+  "version": "1.0.0",
+  "description": "Basic REST API for interacting with a database.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LanceJernigan/REST-API.git"
+  },
+  "author": "Lance Jernigan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LanceJernigan/REST-API/issues"
+  },
+  "homepage": "https://github.com/LanceJernigan/REST-API#readme",
+  "dependencies": {
+    "koa": "^2.4.1"
+  }
+}
