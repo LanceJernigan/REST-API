@@ -1,9 +1,9 @@
 const Router = require('koa-router');
-const router = new Router({
+const resources = new Router({
     prefix: '/:resource'
 });
 
-router.get('/', ctx => {
+resources.get('/', ctx => {
     const {
         resource = false
     } = ctx.params;
@@ -15,7 +15,7 @@ router.get('/', ctx => {
     }
 });
 
-router.get('/:id', ctx => {
+resources.get('/:id', ctx => {
     const {
         resource = false,
         id = 0
@@ -29,4 +29,15 @@ router.get('/:id', ctx => {
     }
 });
 
-module.exports = router;
+resources.post('/', ctx => {
+    const {
+        request
+    } = ctx;
+    const {
+        body = {}
+    } = request;
+
+    console.log( body.test );
+})
+
+module.exports = resources;
