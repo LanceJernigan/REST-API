@@ -31,13 +31,32 @@ resources.get('/:id', ctx => {
 
 resources.post('/', ctx => {
     const {
-        request
+        request,
+        params,
     } = ctx;
     const {
-        body = {}
+        body = {},
     } = request;
+    const id = body.id || false;
 
-    console.log( body.test );
-})
+    if (! id)
+        ctx.body = 'no id';  // create object
+
+    else
+        ctx.body = 'id: ' + id;  // update object
+});
+
+resources.delete('/:id', ctx => {
+    const {
+        resource = '',
+        id = false,
+    } = ctx.params;
+
+    if ( ! id )
+        ctx.body = 'no id';  // nothing deleted
+
+    else
+        ctx.body = 'id: ' + id; // delete object
+});
 
 module.exports = resources;
